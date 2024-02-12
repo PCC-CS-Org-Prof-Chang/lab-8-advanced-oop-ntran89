@@ -1,5 +1,8 @@
 package edu.pasadena.cs.cs03b;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class CorporateAmerica {
 
    private String companyName;
@@ -14,66 +17,68 @@ public class CorporateAmerica {
       return this.companyName;
    }
 
+   // setter and getter methods for employer
    public void setEmployer(Employer employer) {
       this.employer = employer;
+   }
+
+   public Employer getEmployer() {
+      return this.employer;
    }
 
     public static void main(String [] args) {
  
        // Create the manager, staff, contractor objects and manage the association of employer and employees
-      
       Manager manager = new Manager();
-      
       Staff staff = new Staff();
-
       Contractor contractor = new Contractor();
-
       CorporateAmerica company = new CorporateAmerica();
-      company.setCompanyName("AVAJ");
-
-      Employer employer = new Employer(3);
+      Employer employer = new Employer(3); // Creates a new employer with an employee limit of 3
       
 
        // Load data into the objects 
-      manager.setTitle("Manager");
-      manager.setName("Nick");
-      manager.setAge(40);
-      manager.setEmployeeID(1);
-
-      staff.setTitle("Staff");
-      staff.setName("Sean");
-      staff.setAge(30);
-      staff.setEmployeeID(2);
-
-      contractor.setTitle("Contractor");
-      contractor.setName("Brandon");
-      contractor.setAge(25);
-      contractor.setEmployeeID(3);
-
-      employer.setTitle("Employer");
-      employer.setName("Kris");
-      employer.setAge(60);
-      employer.addEmployee(manager);
-      employer.addEmployee(staff);
-      employer.addEmployee(contractor);
       
-      company.setEmployer(employer);
-       // Print the objects info
+      company.setCompanyName("AVAJ"); // Set the company name
+      
+      manager.setTitle("Manager"); // Set the title of the manager
+      manager.setName("Nick"); // Set the name of the manager
+      manager.setAge(40); // Set the age of the manager
+      manager.setEmployeeID(1); // Set the employee ID of the manager
 
+      staff.setTitle("Staff"); // Set the title of the staff
+      staff.setName("Sean"); // Set the name of the staff
+      staff.setAge(30); // Set the age of the staff
+      staff.setEmployeeID(2); // Set the employee ID of the staff
+
+      contractor.setTitle("Contractor"); // Set the title of the contractor
+      contractor.setName("Brandon"); // Set the name of the contractor
+      contractor.setAge(25); // Set the age of the contractor
+      contractor.setEmployeeID(3); // Set the employee ID of the contractor
+
+      employer.setTitle("Employer"); // Set the title of the employer
+      employer.setName("Kris"); // Set the name of the employer
+      employer.setAge(60); // Set the age of the employer
+      employer.addEmployee(manager); // Add the manager to the employer
+      employer.addEmployee(staff); // Add the staff to the employer
+      employer.addEmployee(contractor); // Add the contractor to the employer
+      
+      company.setEmployer(employer); // Set the employer of the company
+
+       // Print the objects info
       System.out.println("Company Name: " + company.getCompanyName());
       System.out.println("Employers: " + company.employer.getName());
       System.out.println();
 
-      manager.summary();
+      manager.summary(); // Print the manager info
       System.out.println();
 
-      staff.summary();
+      staff.summary(); // Print the staff info
       System.out.println();
 
-      contractor.summary();
+      contractor.summary(); // Print the contractor info
       System.out.println();
 
-      employer.summary();
+      employer.summary(); // Print the employer info and who is employed
       System.out.println();
 
     } 

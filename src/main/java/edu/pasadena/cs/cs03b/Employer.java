@@ -1,4 +1,6 @@
 package edu.pasadena.cs.cs03b;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Employer extends Person {
     
@@ -6,14 +8,14 @@ public class Employer extends Person {
     private int employeeCapacity;
     private int currentEmployed;
 
-    public Employer(int employeeCapacity) {
+    public Employer(int employeeCapacity) { // Constructor for the Employer class sets the employee capacity and initializes the employee array
         this.employees = new Employee[employeeCapacity];
         this.employeeCapacity = employeeCapacity;
         this.currentEmployed = 0; // Initially, there are no employees
     }
 
-    public void addEmployee(Employee employee) {
-        if(this.currentEmployed < this.employeeCapacity) {
+    public void addEmployee(Employee employee) { // Method to add an employee to the employer's employee array
+        if(this.currentEmployed < this.employeeCapacity) { // If there is space for a new employee
             this.employees[this.currentEmployed] = employee;
             this.currentEmployed++;
         } else {
@@ -21,6 +23,7 @@ public class Employer extends Person {
         }
     }
 
+    //Getters
     public int getEmployeeCapacity() {
         return this.employeeCapacity;
     }
@@ -34,7 +37,7 @@ public class Employer extends Person {
     }
 
     @Override
-    public void summary() {
+    public void summary() { // This method is from the Person class: Summerizes the employer's information, and gives all the employees names under the employer
         System.out.println("Title:" + getTitle());
         System.out.println("Name:" + getName());
         System.out.println("Age:" + getAge());
